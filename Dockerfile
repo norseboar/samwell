@@ -10,4 +10,4 @@ RUN pipenv install
 
 COPY . .
 
-CMD [ "python"]
+ENTRYPOINT ["bash", "bin/run"]
