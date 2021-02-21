@@ -1,13 +1,12 @@
 FROM python:3.9.1
 
-WORKDIR /usr/src/app
-RUN pip install pipenv
+WORKDIR /samwell
 
-COPY Pipfile ./
-COPY Pipfile.lock ./
+ENV PATH=/home/appuser/.local/bin:$PATH
 
-RUN pipenv install
-
+COPY requirements.txt requirements.txt
 COPY . .
 
-ENTRYPOINT ["bash", "bin/run"]
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENTRYPOINT ["/bin/sh", "bin/run"]

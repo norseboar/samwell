@@ -1,1 +1,4 @@
+# Generate requirements.txt (Docker has a hard time w/ pipenv)
+pipenv lock -r > requirements.txt
+
 docker build -t samwell .
