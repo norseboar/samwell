@@ -1,6 +1,9 @@
 # requirements.txt auto-generated at build time
 requirements.txt
 
+# env has secrets
+.env
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
